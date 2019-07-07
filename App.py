@@ -11,15 +11,11 @@ clock = pygame.time.Clock()
 black = [0, 0, 0]
 white = [255, 255, 255]
 grey = [55, 55, 55]
-ball1Locationx = 0
-ball1Locationy = 0
 running = True
 
 
 def visuals():
-    global ball1
     displayWindow.fill(white)
-    ball1 = pygame.draw.circle(displayWindow, black, (ball1Locationx, ball1Locationy), 40, 3)
     pygame.display.update()
     clock.tick(30)
 
@@ -30,12 +26,7 @@ while running:
         if event.type == pygame.QUIT:
             running = False
         if event.type == pygame.KEYDOWN:
-            if event.key == pygame.K_DOWN:
-                ball1Locationy += 20
-                print("hey")
-        if event.type == pygame.MOUSEBUTTONDOWN:
-            if ball1.collidepoint(mouse):
-                print("ya")
+            pass
     visuals()
 
 pygame.quit()
