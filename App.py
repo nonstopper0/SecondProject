@@ -73,6 +73,7 @@ while running:
             if MoneyB.collidepoint(mouse):
                 money += 1
                 print(money)
+
     visuals()
 
 print("Program Ending...")
