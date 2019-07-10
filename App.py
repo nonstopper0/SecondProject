@@ -34,14 +34,14 @@ class Button:
 
         # get rect and width of text generated. Then divide by 2 to help center
         textRect, textRectSub = textSurf.get_rect(),textSurf.get_rect().width / 2
+        # move text Rect to Rectangle.Center
         textRectmove = textRect.move(rectangle.center)
         textFinal = (textRectmove[0] - textRectSub)
+        # create new text rect object using subtracted numbers
         textNew = (textFinal, textRectmove[1], textRectmove[2], textRectmove[3])
-
-        print(textNew)
-
+        # display text to screen
         displayWindow.blit(textSurf, textNew)
-
+        # return rectangle rect for an easier collide method using collidepoint()
         return rectangle
 
 
