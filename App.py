@@ -50,14 +50,14 @@ class Button:
 
 
 MoneyButton = Button(500, 500, 200, 200, "MONEY", 40, white, black)
-MoneyDisplay = Button(10, 10, 50, 50, str(money), 40, white, black)
+exitButton = Button(5, 5, 40, 40, "EXIT", 15, white, black)
 
 
 def visuals():
-    global MoneyB, MoneyD
+    global MoneyB, Exitb
     displayWindow.fill(white)
     MoneyB = MoneyButton.draw()
-    MoneyD = MoneyDisplay.draw()
+    Exitb = exitButton.draw()
     pygame.display.update()
     clock.tick(30)
 
@@ -73,6 +73,8 @@ while running:
             if MoneyB.collidepoint(mouse):
                 money += 1
                 print(money)
+            if Exitb.collidepoint(mouse):
+                running = False
 
     visuals()
 
